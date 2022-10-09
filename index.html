@@ -278,14 +278,11 @@ header .container {
           <h1>URL <span>Shortener</span></h1>
           <form class="shortener">
             <div class="url-control">
-  <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+        <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
+    <div class="modal fade" id="exampleModal">
+    <h5 class="modal-title" id="exampleModalLabel">Result</h5>
           <div class="modal-body" id="result">No result</div>
-          <div class="modal-footer">
             <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">Copy</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
     </div>
               <small class="error">URL cannot be empty</small>
             </div>
