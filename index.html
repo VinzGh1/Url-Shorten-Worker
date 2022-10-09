@@ -16,7 +16,7 @@
     
     <!-- CSS -->
     
-    <link rel="stylesheet" href="myurl.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/VinzGh1/Url-Shorten-Worker@gh-pages/modal.css"/>
     <style>
     
 * {
@@ -256,6 +256,11 @@ header .container {
   }
 }
 
+.modal {
+  visibility: hidden;
+  background-color: red;
+}
+
 
     </style>
   </head>
@@ -274,15 +279,28 @@ header .container {
           <form class="shortener">
             <div class="url-control">
         <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
-    <div class="modal fade" id="exampleModal">
-    <h5 class="modal-title" id="exampleModalLabel">Result</h5>
-          <div class="modal-body" id="result">No result</div>
-            <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">Copy</button>
-    </div>
+    <div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog no--bg dialog" id="openModal">
+       <div class="modal" id="exampleModal">
+         <a href="#close" title="Close" tabindex="1" role="button" accesskey="x" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;"><strong>×</strong></a>
+         <div class="header-modal no__select">
+           <h3 id="exampleModalLabel">Result</h3>
+    
+         </div>
+         <div class="inner-dialog">
+           <p class="text-box" id="result">No Result</p>
+    
+         </div>
+         <div class="footer-modal link--ltr  no__select">
+           <a onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!" role="button" class="">Copy</a>
+           <a href="#close" role="button" accesskey="x" class="" id="footer-close" onclick="document.getElementById('openModal').style.display='none';return true;">Close</a>
+         </div>
+       </div>
+    
+     </div>
               <small class="error">URL cannot be empty</small>
             </div>
             <div class="input-group-append">
-           <button class="send-link" type="button" onclick='shorturl()' id="searchbtn">Shorten it</button>
+   <a href="#openModal" tabindex="1" accesskey="1" class="send-link" role="button" id="searchbtn" onclick='shorturl()'>Shorten It</a>
                 </div>
           </form>
           <p id="notice"></p>
