@@ -1,107 +1,82 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Shorter URL</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      cursor: default;
-    }
-    html, body {
-      height: 100%;
-    }
-    body {
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      justify-content: center;
-      vertical-align: center;
-      flex-wrap: wrap;
-      align-content: center;
-
-      color: #2a2b2c;
-      background-color: #ebedee;
-      overflow: hidden;
-    }
-    .card {
-      background-color: transparent;
-      width: 768px;
-    }
-    .card-text {
-      text-align: center;
-    }
-    .card-text > a {
-      text-decoration: none;
-      color: #007bff;
-    }
-    .card-text > a {
-      cursor: pointer;
-    }
-    .form-control {
-        cursor: auto;
-    }
-    @media (max-width: 769px) {
-      .card {
-        width: 80%;
-      }
-    }
-    @media (max-width: 420px) {
-      .card {
-        width: 95%;
-      }
-    }
-    @media (prefers-color-scheme: dark) { 
-      body {
-        color: #d9d9d9; 
-        background: #1b1b1b;
-      }
-      .card {
-        background-color: #252d38;
-      }
-    } 
-  </style>
+    <title>gShort</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="gshort.css"/>
 </head>
 <body>
-  <div class="card">
-    <h5 class="card-header">Short your URLs !</h5>
-    <div class="card-body">
-      <h5 class="card-title">Please enter the long URL to be shortened :</h5>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button" onclick='shorturl()' id="searchbtn">Shorten it</button>
-        </div>
-      </div>    
-      <div class="card-text">
-        <a href="https://github.com/xyTom/Url-Shorten-Worker/" target="_self">Fork me on GitHub</a>
-      </div>
-      <p id="notice"></p>             
+  <header class="header">
+  <div class="container">
+    <div class="logo">
     </div>
   </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Result</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          </button>
+</header>
+<main class="main">
+  <div class="landing">
+    <div class="container">
+      <h1>URL <span>Shortener</span></h1>
+      <form class="subscribe">
+        <div class="url-control">
+          <input type="text" name="user-email" class="user-email" placeholder="Shorten you link" />
+          <small class="error">Please provide a valid email address</small>
         </div>
-        <div class="modal-body" id="result">No result</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">Copy</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>    
-        </div>
-      </div>
+        <button type="button" class="send-email">Shorten</button>
+      </form>
     </div>
-  </div>         
-  <script src="https://gcore.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  </div>
+  <div class="banner">
+    <div class="container">
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="social-media">
+      <ul>
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f icon"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter icon"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram icon"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- Arribution For Codepen Only -->
+<div class="attribution">
+  Challenge by
+  <a href="https://www.frontendmentor.io?ref=challenge" class="outer-link" target="_blank">Frontend Mentor
+  </a>
+  . Coded by
+  <span class="outer-link">Mohamed Aridah</span>.
+  <ul class="social-media">
+    <li>
+      <a href="https://www.github.com/MohamedAridah" title="Visite My Github Account">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/1a5dbfa142a9677d6ddaa05d05f377ac23af9a2e/icons/github/github-original.svg" class="light" alt="My Github Account" />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.codepen.io/FedLover" title="Visite My Codepen Account">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/1a5dbfa142a9677d6ddaa05d05f377ac23af9a2e/icons/codepen/codepen-plain.svg" class="light" alt="My codepen Account" />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.frontendmentor.io/profile/MohamedAridah" title="Visite My Frontend Mentor Account">
+        <img src="https://mohamedaridah.github.io/hosted-assets/FEM.png" alt="My Frontend Mentor Account" />
+      </a>
+    </li>
+  </ul>
+</div>
+<script src="https://gcore.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
   <script src="https://gcore.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://gcore.jsdelivr.net/npm/url-shorten-worker@1.0.5/main.js" crossorigin="anonymous"></script>
 </body>
 </html>
