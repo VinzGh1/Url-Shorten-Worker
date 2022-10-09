@@ -16,7 +16,7 @@
     
     <!-- CSS -->
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/VinzGh1/Url-Shorten-Worker@gh-pages/modal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
     
 * {
@@ -279,24 +279,6 @@ header .container {
           <form class="shortener">
             <div class="url-control">
         <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
-  <div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog no--bg dialog" id="exampleModal">
-        <div class="modal" id="">
-          <a href="#close" title="Close" tabindex="1" role="button" accesskey="x" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;"><strong>×</strong></a>
-          <div class="header-modal no__select">
-            <h3 id="exampleModalLabel">Result</h3>
-    
-          </div>
-          <div class="inner-dialog">
-            <div class="text-box" id="result">No Result</div>
-    
-          </div>
-          <div class="footer-modal link--ltr  no__select">
-            <a onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!" role="button" class="">Copy</a>
-            <a href="#close" role="button" accesskey="x" class="" id="footer-close" onclick="document.getElementById('openModal').style.display='none';return true;">Close</a>
-          </div>
-        </div>
-    
-      </div>
               <small class="error">URL cannot be empty</small>
             </div>
             <div class="input-group-append">
@@ -333,11 +315,27 @@ header .container {
         </div>
       </div>
     </footer>
-   
+    
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+             </button>
+           </div>
+           <div class="modal-body" id="result">No result</div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">Copy</button>
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
     <!-- SCRIPT -->
           <script src="https://gcore.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
           <script src="https://gcore.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-          <script src="https://gcore.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+          <script src="https://gcore.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOId+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
           <script src="https://gcore.jsdelivr.net/npm/url-shorten-worker@1.0.5/main.js" crossorigin="anonymous"></script>
     
   </body>
