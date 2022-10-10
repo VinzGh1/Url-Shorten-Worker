@@ -116,26 +116,6 @@ header .container {
   color: var(--Pale-Blue);
 }
 
-.shortener .url-control .error {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  transform: translateY(5px);
-  color: var(--Light-Red);
-  font-style: italic;
-  font-size: 15px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s linear;
-}
-
-
-.shortener .url-control.invalid .error {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 .shortener .send-link {
  display: block;
@@ -170,6 +150,7 @@ header .container {
 
 .footer .social-media ul {
   display: flex;
+  margin-right: 20px;
   justify-content: center;
   align-items: center;
   gap: 25px;
@@ -201,12 +182,14 @@ header .container {
   color: #fff;
 }
 
+
 /* RESPONSIVE */
 
 @media (min-width: 1024px) {
   .container {
     width: 52%;
   }
+  
 }
 
   @media (min-width: 640px) {
@@ -256,7 +239,18 @@ header .container {
   }
 }
 
+@media (min-width: 800px) {
+  .footer {
+    padding: 30px;
+    width: 95%;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .shortener .send-link {
+    transform: translateY(-2em);
+  }
+}
     </style>
   </head>
   <body>
@@ -274,7 +268,6 @@ header .container {
           <form class="shortener">
             <div class="url-control">
         <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
-              <small class="error">URL cannot be empty</small>
             </div>
             <div class="input-group-append">
           <button class="send-link" type="button" onclick='shorturl()' id="searchbtn">Shorten it</button>
@@ -309,13 +302,13 @@ header .container {
           
           <ul>
         <li>
-          <a href="#"><i class="fa-brands fa-facebook-f icon"></i></a>
+          <a href="https://facebook.com/kazu.miteku.1" target="_blank"><i class="fa-brands fa-facebook-f icon"></i></a>
         </li>
         <li>
-          <a href="#"><i class="fa-brands fa-twitter icon"></i></a>
+          <a href="https://t.me/synerize" target="_blank"><i class="fa-brands fa-telegram icon"></i></a>
         </li>
         <li>
-          <a href="#"><i class="fa-brands fa-instagram icon"></i></a>
+          <a href="https://github.com/VinzGh1" target="_blank"><i class="fa-brands fa-github icon"></i></a>
         </li>
           </ul>
         </div>
